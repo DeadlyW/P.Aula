@@ -40,7 +40,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Deadly\Desktop\93f227e8-b3ff-4697-9145-1adfad415878.jpg"/>
+          <Image iconType="3" name="/Imagenes/Helados.jpg"/>
         </Property>
       </Properties>
     </Component>
