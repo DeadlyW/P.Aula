@@ -58,7 +58,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(contralog);
-        contralog.setBounds(170, 200, 140, 22);
+        contralog.setBounds(200, 220, 140, 20);
 
         nombrelog.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         nombrelog.setForeground(new java.awt.Color(0, 0, 204));
@@ -70,7 +70,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(nombrelog);
-        nombrelog.setBounds(170, 170, 140, 22);
+        nombrelog.setBounds(200, 190, 140, 20);
 
         acceder.setText("INGRESAR");
         acceder.addActionListener(new java.awt.event.ActionListener() {
@@ -83,7 +83,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Helados.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 480, 270);
+        jLabel1.setBounds(10, -20, 520, 320);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
