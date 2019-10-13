@@ -23,7 +23,7 @@ import java.util.logging.Logger;
  */
 public class AdministradorController {
 
-    private static List<AdministradorController> administrador = new ArrayList();
+    private static List<Administrador> administrador = new ArrayList();
     static FileOutputStream fout;
     static FileInputStream fin;
 
@@ -35,7 +35,7 @@ public class AdministradorController {
         try {
             fout = new FileOutputStream("C:\\Administrador\\administrador.txt");
             out = new ObjectOutputStream(fout);
-            out.writeObject(administrador);
+            out.writeObject(getAdministrador());
             out.close();
         } catch (IOException ex) {
             Logger.getLogger(AdministradorController.class.getName()).log(Level.SEVERE, null, ex);
@@ -71,22 +71,29 @@ public class AdministradorController {
         return provee;
     }
 
-    
-    public void agregar(Administrador a){
+    public void agregar(Administrador a) {
         administrador.add(a);
     }
+
+    public void eliminar(Administrador a) {
+        administrador.remove(a);
+    }
+
     /**
      * @return the administrador
      */
-    public static List<AdministradorController> getAdministrador() {
+    public static List<Administrador> getAdministrador() {
         return administrador;
     }
 
     /**
      * @param aAdministrador the administrador to set
      */
-    public static void setAdministrador(List<AdministradorController> aAdministrador) {
+    public static void setAdministrador(List<Administrador> aAdministrador) {
         administrador = aAdministrador;
     }
+    /**
+     * @return the administrador
+     */
 
 }
