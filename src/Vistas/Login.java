@@ -16,6 +16,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -27,28 +28,52 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        contralog = new javax.swing.JTextField();
+        nombrelog = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        getContentPane().setLayout(null);
+
+        contralog.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        contralog.setForeground(new java.awt.Color(0, 0, 255));
+        contralog.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        contralog.setText("Contraseña");
+        contralog.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                contralogMouseClicked(evt);
+            }
+        });
+        getContentPane().add(contralog);
+        contralog.setBounds(170, 200, 140, 20);
+
+        nombrelog.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        nombrelog.setForeground(new java.awt.Color(0, 0, 204));
+        nombrelog.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        nombrelog.setText("Nombre");
+        nombrelog.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nombrelogMouseClicked(evt);
+            }
+        });
+        getContentPane().add(nombrelog);
+        nombrelog.setBounds(170, 170, 140, 20);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Helados.jpg"))); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1)
-        );
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 480, 270);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void nombrelogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nombrelogMouseClicked
+        nombrelog.setText("");
+    }//GEN-LAST:event_nombrelogMouseClicked
+
+    private void contralogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contralogMouseClicked
+        contralog.setText("");
+    }//GEN-LAST:event_contralogMouseClicked
 
     /**
      * @param args the command line arguments
@@ -86,6 +111,8 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField contralog;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField nombrelog;
     // End of variables declaration//GEN-END:variables
 }
