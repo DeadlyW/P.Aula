@@ -12,15 +12,15 @@ import java.io.Serializable;
  * 
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
-public class Login implements Serializable{
+public class LoginM implements Serializable{
     
-    private String usuario;
-    private String contrasena;
+    private String usuario = "Jose";
+    private String contrasena = "12345q";
 
-    public Login() {
+    public LoginM() {
     }
 
-    public Login(String usuario, String contrasena) {
+    public LoginM(String usuario, String contrasena) {
         this.usuario = usuario;
         this.contrasena = contrasena;
     }

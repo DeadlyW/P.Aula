@@ -11,32 +11,32 @@ import java.io.Serializable;
  *
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
-public class Administrador implements Serializable{
+public class Administrador implements Serializable {
 
     private String nombre;
     private String fecha;
     private String sabor;
     private String tipo;
     private int codProducto;
+    private int cantidad;
     private String estado;
 
     public Administrador() {
     }
 
-    public Administrador(String nombre, String fecha, String sabor, String tipo, int codProducto, String estado) {
+    public Administrador(String nombre, String fecha, String sabor, String tipo, int codProducto, int cantidad, String estado) {
         this.nombre = nombre;
         this.fecha = fecha;
         this.sabor = sabor;
         this.tipo = tipo;
         this.codProducto = codProducto;
+        this.cantidad = cantidad;
         this.estado = estado;
     }
 
-    /**
-     * @return the nombre
-     */
-    public String getNombre() {
-        return nombre;
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone(); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -114,6 +114,20 @@ public class Administrador implements Serializable{
      */
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    /**
+     * @return the cantidad
+     */
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    /**
+     * @param cantidad the cantidad to set
+     */
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 
 }

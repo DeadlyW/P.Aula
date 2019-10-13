@@ -5,7 +5,7 @@
  */
 package Controlador;
 
-import Modelo.Login;
+import Modelo.LoginM;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,17 +24,37 @@ import java.util.logging.Logger;
  */
 public class LoginController {
 
-    private static List<Login> login = new ArrayList();
+    private static List<LoginM> login = new ArrayList();
     static FileOutputStream fout;
     static FileInputStream fin;
-
-    public void agregar(Login a) {
+    
+    public  LoginController(){
+    
+        generarInicio();
+        
+    }
+    
+    public void generarInicio(){
+        agregar(new LoginM("Jose","12345"));
+        agregar(new LoginM("Romario","12345"));
+    }
+    
+    public void agregar(LoginM a) {
 
         login.add(a);
 
     }
+    
+    public void listar(){
+    
+        Iterator iter = login.iterator();
+while (iter.hasNext())
+  System.out.println(iter.next());
 
-    public void remover(Login a) {
+    
+    }
+    
+    public void remover(LoginM a) {
 
         login.add(a);
 
@@ -82,18 +103,41 @@ public class LoginController {
         }
         return provee;
     }
+    
+     public static LoginM consultar(String n){
+        LoginController.cargarUsuarios();
+         LoginM j=null;
+         for(int i=0;i<getLogin().size();i++){
+            j=(LoginM)LoginController.getLogin().get(i);
+               if(j.getUsuario().equals(n)){
+                return j;
+               }
+        }
+         return j;
+    }
+     
+     public static LoginM consultar2(String n){
+        LoginM j=null;
+         for(int i=0;i<getLogin().size();i++){
+            j=(LoginM)LoginController.getLogin().get(i);
+               if(j.getContrasena().equals(n)){
+                return j;
+               }
+        }
+         return j;
+    }
 
     /**
      * @return the login
      */
-    public static List<Login> getLogin() {
+    public static List<LoginM> getLogin() {
         return login;
     }
 
     /**
      * @param aLogin the login to set
      */
-    public static void setLogin(List<Login> aLogin) {
+    public static void setLogin(List<LoginM> aLogin) {
         login = aLogin;
     }
 }

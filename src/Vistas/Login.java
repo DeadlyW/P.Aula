@@ -5,7 +5,10 @@
  */
 package Vistas;
 
+import Controlador.LoginController;
+import Modelo.LoginM;
 import java.awt.Dimension;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,11 +21,13 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        this.setSize(new Dimension(485, 295));
+        this.setSize(485, 295);
         this.setLocationRelativeTo(null);
+        
                
     }
-
+    
+    LoginController m = new LoginController();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,11 +39,11 @@ public class Login extends javax.swing.JFrame {
 
         contralog = new javax.swing.JTextField();
         nombrelog = new javax.swing.JTextField();
+        acceder = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
-        setAlwaysOnTop(true);
         setBounds(new java.awt.Rectangle(0, 0, 400, 269));
         setResizable(false);
         getContentPane().setLayout(null);
@@ -67,6 +72,15 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(nombrelog);
         nombrelog.setBounds(170, 170, 140, 22);
 
+        acceder.setText("INGRESAR");
+        acceder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                accederActionPerformed(evt);
+            }
+        });
+        getContentPane().add(acceder);
+        acceder.setBounds(190, 230, 90, 32);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Helados.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 480, 270);
@@ -81,6 +95,18 @@ public class Login extends javax.swing.JFrame {
     private void contralogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contralogMouseClicked
         contralog.setText("");
     }//GEN-LAST:event_contralogMouseClicked
+
+    private void accederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accederActionPerformed
+        LoginM log = new LoginM();
+        m.generarInicio();
+        LoginController.guardarUsuarios();
+        String z = nombrelog.getText();
+        if (LoginController.consultar(z).equals(z)){
+            JOptionPane.showMessageDialog(null, "Login Funcionando");
+        }else{
+            JOptionPane.showMessageDialog(null, "Login Fallando");
+        }
+    }//GEN-LAST:event_accederActionPerformed
 
     /**
      * @param args the command line arguments
@@ -118,6 +144,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton acceder;
     private javax.swing.JTextField contralog;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField nombrelog;
