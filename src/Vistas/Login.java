@@ -5,6 +5,8 @@
  */
 package Vistas;
 
+import java.awt.Dimension;
+
 /**
  *
  * @author Sammy Guergachi <sguergachi at gmail.com>
@@ -16,7 +18,9 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        this.setSize(new Dimension(485, 295));
         this.setLocationRelativeTo(null);
+               
     }
 
     /**
@@ -33,6 +37,9 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login");
+        setAlwaysOnTop(true);
+        setBounds(new java.awt.Rectangle(0, 0, 400, 269));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -46,7 +53,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(contralog);
-        contralog.setBounds(170, 200, 140, 20);
+        contralog.setBounds(170, 200, 140, 22);
 
         nombrelog.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         nombrelog.setForeground(new java.awt.Color(0, 0, 204));
@@ -58,7 +65,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(nombrelog);
-        nombrelog.setBounds(170, 170, 140, 20);
+        nombrelog.setBounds(170, 170, 140, 22);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Helados.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
