@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Modelo.Administrador;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -70,6 +71,10 @@ public class AdministradorController {
         return provee;
     }
 
+    
+    public void agregar(Administrador a){
+        administrador.add(a);
+    }
     /**
      * @return the administrador
      */
